@@ -1,0 +1,18 @@
+version: '3'
+services:
+  httpd:
+    build:
+      dockerfile: dockerfile
+    ports:
+      - "8101:80"
+    #volumes:
+    # - C:\Users\famil\Desktop\mateo lozano-2503285\datadrive:datadrive
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USER=: myuser
+      MYSQL_PASSWORD: myuserpassword
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+    ports:
+    - "3306:3306"

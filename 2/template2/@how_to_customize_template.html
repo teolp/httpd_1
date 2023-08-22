@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>How to customize this template</title>
+<style type="text/css">
+<!--
+.Style1 {color: #FF0000}
+.Style2 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<p>To add/customize template buttons  :</p>
+<p>Open HTML pages and replace <span class="Style2">item_text</span> (flash button name) and <span class="Style2">item_link</span> (flash button link) by your own values as in this example :</p>
+<p>&lt;!-- &quot;About us&quot; button --&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+AC_FL_RunContent( ...,'xml_filename=menu.xml&amp;<strong>item_text</strong>=<span class="Style1">About us</span>&amp;<strong>item_link</strong>=<span class="Style1">aboutus.htm</span>&amp;item_text_size=20&amp;item_ajust=35&amp;item_selected=0' ); //end AC code<br />
+&lt;/script&gt; </p>
+<p><strong>NOTICE 1 :</strong> If <span class="Style2">item_text</span> contains a single quote ('), you must preceed the single quote with a backslash (\). For example you shoud write  &quot; It<strong>\</strong>'s my home page &quot; instead of     &quot; It's my home page &quot;.<br />
+<strong>NOTICE</strong> <strong>2</strong> : In this example the flash button &quot;About us&quot; is active (clickable). If you want it to be inactive replace characters 'item_ajust=35&amp;item_selected=0' by these ones : 'item_ajust=1&amp;item_selected=1'.</p>
+<p>To customize flash buttons colors open file ''flash/menu.xml' and replace colors by yours :</p>
+  <p>&lt;main item_bg_color=&quot;<span class="Style1">0xFFFFFF</span>&quot; item_text_color=&quot;<span class="Style1">0x953C32</span>&quot; item_hover_bg_color=&quot;<span class="Style1">0x953C32</span>&quot; item_hover_text_color=&quot;<span class="Style1">0xFFFFFF</span>&quot; &gt;&lt;/main&gt; </p>
+<p><strong>NOTICE 1 </strong> : Don't forget to add  &quot;0x&quot; before the color code. <strong><br />
+  NOTICE  2 </strong> : You may add unlimited flash buttons on each page.</p>
+<p>-------------------------</p>
+<p>To customize flash header :</p>
+<p>Open the file &quot;flash/header.xml&quot; in notepad and insert your own values as in this example :</p>
+<p>&lt;?xml version='1.0' encoding='UTF-8' ?&gt;<br />
+  &lt;main top_line_color=&quot;<span class="Style1">0x000000</span>&quot; header_bg_color=&quot;<span class="Style1">0x953C32</span>&quot; font_color_sup=&quot;<span class="Style1">0xffffff</span>&quot; font_size_sup=&quot;<span class="Style1">36</span>&quot; font_color_inf=&quot;<span class="Style1">0xffffff</span>&quot; font_size_inf=&quot;<span class="Style1">24</span>&quot;&gt;&lt;/main&gt;<br />
+  &lt;url&gt;<br />
+  &lt;url1&gt;<br />
+  &lt;val1&gt;<span class="Style1">BUSINESS</span>&lt;/val1&gt;<br />
+  &lt;val2&gt;<span class="Style1">PERSPECTIVES</span>&lt;/val2&gt;<br />
+  &lt;/url1&gt;<br />
+  &lt;/url&gt;<br />
+</p>
+<p>If you need to change flash header image : open HTML pages and replace <span class="Style2">header_image_1</span> value (image name) by  your own values as in this example :</p>
+<p>&lt;!-- Flash Intro Header --&gt;<br />
+  &lt;script type=&quot;text/javascript&quot;&gt;<br />
+  AC_FL_RunContent(...'&amp;xml_filename=header.xml&amp;<strong>header_image_1</strong>=<span class="Style1">myimage.jpg</span>&amp;text_sup_y=50&amp;text_inf_y=10' ); //end AC code <br />
+  &lt;/script&gt;</p>
+<p><strong>NOTICE </strong> : Your image must be under the &quot;/flash' folder and must be at least 548 pixels wide and 158 pixels hight.</p>
+<p><br />
+-------------------------</p>
+<p>To customize flash footer text and music :</p>
+<p>Open the file &quot;flash/footer.xml&quot; and insert your own values as in this example :</p>
+<p>&lt;?xml version='1.0' encoding='UTF-8' ?&gt;<br />
+  &lt;url&gt;<br />
+  &lt;url1&gt;<br />
+  &lt;footer_text&gt;<span class="Style1">Copyright Companyname - 2014</span>&lt;/footer_text&gt;<br />
+  &lt;footer_sound&gt;<span class="Style1">flash/01.mp3</span>&lt;/footer_sound&gt;<br />
+  &lt;/url1&gt;<br />
+  &lt;/url&gt;<br /> 
+</p>
+<p><strong>NOTICE</strong>: Your mp3 music file must not be to heavy if you don't want to wait too  long before you can hear it..</p>
+<p>If you don't want any music on a page just open HTML page and change <strong>playsound</strong> parameter to <span class="Style1">no</span> as in the example below :</p>
+<p>&lt;!-- Flash footer --&gt; <br />
+  &lt;script type=&quot;text/javascript&quot;&gt;<br />
+  AC_FL_RunContent( ...','xml_filename=footer.xml&amp;<strong>playsound</strong>=<span class="Style1">no</span> ); //end AC code <br />
+  &lt;/script&gt;<br />
+  <br />
+</p>
+<p></p>
+</body>
+</html>
